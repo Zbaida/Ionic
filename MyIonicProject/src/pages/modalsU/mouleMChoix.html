@@ -1,0 +1,31 @@
+<ion-header>
+<ion-toolbar color="primary">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="dismiss('','')" color="royal">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-navbar>
+    <ion-title align="center" >Modules</ion-title>
+  </ion-navbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <p>Selectionner un Module</p>
+  <ion-list>
+  <ion-item-group *ngFor="let module of Modules">
+<ion-item (click)="dismiss(module.id_module,module.module)">
+    <ion-avatar item-start>
+      <ion-icon color="primary" style="font-size: 50px" name="albums"></ion-icon>
+    </ion-avatar>
+    <h2>{{module.module}}</h2>
+    <p>{{module.description}}</p>
+  </ion-item>
+  </ion-item-group>
+</ion-list>
+
+    </ion-content>

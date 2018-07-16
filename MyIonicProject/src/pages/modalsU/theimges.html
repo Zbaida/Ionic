@@ -1,0 +1,29 @@
+<ion-header>
+<ion-toolbar color="primary">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="dismiss('')" color="royal">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-navbar>
+    <ion-title align="center" >Modules</ion-title>
+  </ion-navbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+<h2>Select Image</h2>
+  <ion-grid>
+   <ion-row>
+    <ion-col *ngFor="let image of images" col-4 align="center">
+    <ion-avatar (click)="dismiss(apiUrl+'/'+image.src)">
+      <img  src="{{apiUrl+'/'+image.src}}">
+    </ion-avatar>
+    <br>
+    
+    </ion-col>
+
+    </ion-row>
+    </ion-grid>
+    </ion-content>

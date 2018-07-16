@@ -1,0 +1,70 @@
+<ion-header>
+<ion-navbar color="primary">
+<ion-toolbar >
+        <ion-title *ngIf="miseajour=='no'">Nouveau Module</ion-title>
+        <ion-title *ngIf="miseajour=='yes'">Modifier</ion-title>
+    <ion-buttons  end>
+      <button ion-button icon-only color="royal" (click)="tryToSave()">
+        <ion-icon name="done-all"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+
+  <ion-grid>
+   <ion-row justify-content-center>
+    <ion-col col-6 align="center">
+    <ion-avatar >
+      <img  src="{{img}}">
+      <ion-fab right bottom>
+    <button ion-fab mini (click)="chooseImage()"  style="margin-top:0px;margin-right:0px;padding-right:0px;padding-left:0px;">
+      <ion-icon name="more"></ion-icon>
+    </button>
+    </ion-fab>
+    </ion-avatar>
+    </ion-col>
+    </ion-row>
+</ion-grid>
+
+
+<ion-list>
+<ion-label stacked>Module</ion-label>
+<ion-item>
+
+<ion-input type="titre" [(ngModel)]="titre" placeholder="Enter Un titre" name="titre"></ion-input>
+</ion-item>
+<ion-label stacked>Description</ion-label>
+<ion-item>
+    <ion-textarea name="description" rows="5" [(ngModel)]="description" placeholder="Enter la description"></ion-textarea>
+</ion-item>
+ </ion-list>
+
+
+
+
+<ion-grid>
+   <ion-row>
+    
+<ion-col col-4  align="center">
+  
+    
+</ion-col>
+
+<ion-col col-4 align="center">
+  
+</ion-col>
+
+
+<ion-col col-4  align="center">
+    
+</ion-col>
+
+ </ion-row>
+</ion-grid>
+  
+</ion-content>
+

@@ -1,0 +1,48 @@
+<ion-header>
+<ion-toolbar color="primary">
+    <ion-buttons end>
+    <button ion-button icon-only (click)="addNote()" color="royal">
+        <ion-icon name="ios-create-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  
+    <ion-title align="center" >Mes Modules</ion-title>
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-searchbar placeholder="Rechercher"  [showCancelButton]="shouldShowCancel" (ionInput)="searchItems($event)">
+</ion-searchbar>
+
+  <ion-grid>
+   <ion-row>
+   
+   <ion-col *ngIf="notlookin==1 && Modules?.length == 0" col-12 align="center">
+        <p>Pas de resultat</p>
+    </ion-col>
+
+    <ion-col *ngIf="notlookin==0" col-4 align="center">
+
+<ion-avatar (click)="addModule()">
+      <img  src="assets/imgs/add.png">
+      
+    </ion-avatar><br>
+    <a (click)="addModule()">Ajouter</a>
+    </ion-col>
+
+
+   
+      
+    <ion-col *ngFor="let module of Modules" col-4 align="center">
+    <ion-avatar (press)="openMenu(module)" (click)="viewItemNotes(module)">
+      <img  src="{{module.image}}">
+      
+    </ion-avatar><br>
+    <a (press)="openMenu(module)" (click)="viewItemNotes(module)">{{module.module}}</a>
+    </ion-col>
+
+    </ion-row>
+    </ion-grid>
+  
+</ion-content>

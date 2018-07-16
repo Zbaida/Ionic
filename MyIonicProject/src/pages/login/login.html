@@ -1,0 +1,59 @@
+
+
+<ion-content padding style="background: linear-gradient(180deg, #2196F3, #00bcd4);">
+  <br>
+  <ion-grid>
+   <ion-row>
+   <ion-col col-2 align="center">
+      
+    </ion-col>
+    <ion-col col-8 align="center">
+<img src="{{img}}">
+<hr>    
+      <div style="height: 100%">
+      <a>
+<ion-icon color="light" style="font-size: 90px" name="contact"></ion-icon>
+<br>
+
+    </a>
+    </div>
+    
+    </ion-col>
+
+    <ion-col col-2 align="center">
+      
+    </ion-col>
+    </ion-row>
+    </ion-grid>
+    <br>
+    <br>
+    <div id="container" align="center">
+    <ion-list>
+      <ion-item id="rounded">
+      <ion-label color="light"><ion-icon name="mail"></ion-icon></ion-label>
+    <ion-input type="text"  placeholder="E-mail" [(ngModel)]="email" name="email"  style="color:white"></ion-input>
+      </ion-item>
+
+      <ion-item id="rounded">
+      <ion-label color="light"><ion-icon name="key"></ion-icon></ion-label>
+  <ion-input type="password" placeholder="Password" [(ngModel)]="password" name="password" style="color:white;"></ion-input>
+      </ion-item>     
+    
+
+    </ion-list>
+
+
+    <br>
+    <br>
+<div style="width: 70%">
+<button ion-button large block round color="login" (click)="connecter()" >Se Connecter</button>
+<br>
+<button ion-button large block outline round (click)="showInscription()" color="light">Inscription</button>  
+</div>
+
+  </div>
+
+<br>
+
+</ion-content>
+

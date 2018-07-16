@@ -1,0 +1,45 @@
+<ion-header>
+
+<ion-toolbar color="primary">
+    <ion-buttons end>
+    <button ion-button icon-only (click)="addNote()" color="royal">
+        <ion-icon name="ios-create-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>{{modul.module}}</ion-title>
+  </ion-navbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-searchbar placeholder="Rechercher" [showCancelButton]="shouldShowCancel" (ionInput)="searchItems($event)">
+</ion-searchbar>
+
+<ion-list>
+
+<ion-item-sliding *ngFor="let note of notes">
+    <ion-item (click)="displayNoteDet(note)">
+      <ion-avatar item-start>
+      <ion-icon color="primary" style="font-size: 50px" name="clipboard"></ion-icon>
+    </ion-avatar>
+    <h2>{{note.titre}}</h2>
+    <div align="right">
+       <ion-note>{{note.cretdate}}</ion-note>
+    </div>
+    </ion-item>
+    <ion-item-options side="left">
+      <button ion-button color="danger" (click)="deleteNote(note.id_note)">
+      <ion-icon color="light" name="trash"></ion-icon>
+      Supprimer
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+
+
+
+  
+</ion-list>
+  
+</ion-content>
+

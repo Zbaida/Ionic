@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addNote()" color="royal">
+        <ion-icon name="ios-create-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+      <ion-title align="center">Mes Notes</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <ion-searchbar placeholder="Rechercher" [showCancelButton]="shouldShowCancel" (ionInput)="getItems($event)">
+  </ion-searchbar>
+  <br>
+  <div *ngIf="notlookin==1 && notes?.length == 0" col-12 align="center">
+    <p>Pas de resultat</p>
+  </div>
+
+<ion-card *ngFor="let note of notes">
+  <ion-card-header color="primary">
+    <a (click)="displayNoteDet(note)"><b>{{note.titre}}</b></a>
+    <a (click)="deleteNote(note.id_note)">
+    <ion-icon color="danger" style="float: right" name="trash" small></ion-icon>
+    </a>
+  </ion-card-header>
+  <ion-card-content (click)="displayNoteDet(note)">
+    <p class="testing">
+      {{note.body}}
+    </p>
+    <div align="right">
+    <ion-note small>
+      {{note.cretdate}}
+    </ion-note>
+    </div>
+  </ion-card-content>
+</ion-card>
+<!--
+  <ion-list>
+    <ion-item-sliding *ngFor="let note of notes">
+      <ion-item (click)="displayNoteDet(note)">
+        <h2 style="font-size: 20px">{{note.titre}}</h2>
+        <p style="padding: 4px;color: blue">{{note.cretdate}}</p>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="danger" (click)="deleteNote(note.id_note)">
+          <ion-icon color="light" name="trash"></ion-icon>
+          Supprimer
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>-->
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+<ion-navbar color="primary">
+<ion-toolbar >
+        <ion-title>Nouvelle Note</ion-title>
+    <ion-buttons  end>
+      <button ion-button icon-only color="royal" (click)="tryToSave()">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<div style="height: 100%">
+<ion-input style="font-size: 1.3em" text-center [(ngModel)]="titre" placeholder="Titre ..." name="titre"></ion-input>
+<hr>
+<ion-item>
+<ion-textarea id="desInputBox" [(ngModel)]="description" placeholder="Enter Votre Note ..." name="titre"></ion-textarea>
+</ion-item>	
+</div>
+
+
+  
+</ion-content>
+

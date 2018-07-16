@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-title align="center">Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+   <ion-row justify-content-right>
+    <ion-col col-6 align="center">
+    <ion-avatar >
+      <img  src="{{modul.image}}">
+    </ion-avatar>
+    </ion-col>
+    <ion-col col-5 align="center">
+    <button ion-button color="energized" (click)="showNotes(modul)" icon-left block>
+    <ion-icon name="paper"></ion-icon>
+      Notes
+  </button>
+  <br>
+  <button ion-button color="danger" (click)="deletModule(modul.id_module)" icon-left block clear>
+    <ion-icon name="trash"></ion-icon>
+    Supprimer
+  </button>
+    
+
+    </ion-col>
+ </ion-row>
+</ion-grid>
+
+<ion-label stacked>Module</ion-label>
+<div>
+<p>{{modul.module}}</p>
+</div>
+
+
+<ion-label stacked>Description</ion-label>
+<div>
+        <p>{{modul.description}}</p>
+</div>
+
+
+<ion-grid>
+   <ion-row>
+    
+    <ion-col col-4  align="center">
+  <ion-row>
+    <ion-col align="center">
+      <ion-icon name="calendar"></ion-icon>
+      Crée le
+    </ion-col>
+  </ion-row>
+    <div style="border-right: 1px solid lightgrey">
+    <ion-row style="border-bottom: 1px solid lightgrey">
+    <ion-col align="right">
+      <strong>{{modul.dd}}</strong>
+    </ion-col>
+    <ion-col align="left">
+      <strong>{{modul.md}}</strong>
+    </ion-col></ion-row>
+    <ion-row>
+    <ion-col align="center">
+      <strong>{{modul.yd}}</strong>
+    </ion-col>
+  </ion-row>
+  </div>
+    </ion-col>
+
+
+
+<ion-col col-4 align="center">
+  <ion-row>
+    <ion-col align="center">
+      <ion-icon name="copy"></ion-icon>
+      Notes
+    </ion-col>
+  </ion-row>
+    <ion-row align="center" >
+    <ion-col align="center">
+      <a><strong>{{modul.nbrnotes}}</strong></a>
+    </ion-col>
+  </ion-row>
+
+  <ion-row >
+    <ion-col align="center">
+      <ion-icon name="stats"></ion-icon>
+    </ion-col>
+  </ion-row>
+    </ion-col>
+
+
+ <ion-col col-4  align="center">
+  <ion-row>
+    <ion-col align="center">
+      <ion-icon name="calendar"></ion-icon>
+      Modifier le
+    </ion-col>
+  </ion-row>
+  <div style="border-left: 1px solid lightgrey">
+    <ion-row style="border-bottom: 1px solid lightgrey">
+    <ion-col align="right">
+      <strong>{{modul.df}}</strong>
+    </ion-col>
+    <ion-col align="left">
+      <strong>{{modul.mf}}</strong>
+    </ion-col></ion-row>
+    <ion-row>
+    <ion-col align="center">
+      <strong>{{modul.yf}}</strong>
+    </ion-col>
+  </ion-row>
+  </div>
+    
+    </ion-col>
+
+ </ion-row>
+</ion-grid>
+  
+</ion-content>
+
