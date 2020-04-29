@@ -1,3 +1,3 @@
 # Ionic
 Mes codes avec le language ionic.
-Ce projet est pour but de GESTION DE PRISE DES NOTES      
+The aim of this project is to make NOTE TAKING MANAGEMENT    
